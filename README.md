@@ -1,80 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# 📂 JustiFi
+## Getting Started
 
-**JustiFi** is a full-stack Next.js application that helps legal professionals organize case files, chat with an AI assistant, and generate AI-powered insights. It features:
+First, run the development server:
 
-- **Clerk-powered authentication** (Sign-in, SSO, webhooks)
-- **MongoDB** via Mongoose for Users, Spaces, Documents, Threads, Messages & Insights
-- **Cloudinary** document uploads
-- **AI chat threads** per case, with messages stored separately
-- **AI-generated case insights** (summary, support & opposition)
-- Fully responsive UI built with Tailwind CSS & Radix UI components
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🚀 Quick Start
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. **Clone & install**  
-   bash
-   git clone https://github.com/your-org/justifi.git
-   cd justifi
-   npm install
-`
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-2. **Environment Variables**
-   Create a `.env.local` in the project root with:
+## Learn More
 
-   env
-   # MongoDB
-   MONGODB_URI=your_mongo_connection_string
+To learn more about Next.js, take a look at the following resources:
 
-   # Clerk
-   CLERK_PUBLISHABLE_KEY=pk_...
-   CLERK_SECRET_KEY=sk_...
-   CLERK_WEBHOOK_SECRET=whsec_...
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-   # Cloudinary
-   CLOUDINARY_CLOUD_NAME=your_cloud_name
-   CLOUDINARY_API_KEY=your_api_key
-   CLOUDINARY_API_SECRET=your_api_secret
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-   # (Optional) If you need absolute URLs in server code
-   NEXT_PUBLIC_API_URL=http://localhost:3000
-   
+## Deploy on Vercel
 
-3. **Run locally**
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-   bash
-   npm run dev
-   
-
-4. **Expose webhooks in development**
-
-   bash
-   npx ngrok http 3000
-   
-
-   Copy the HTTPS forwarding URL into your Clerk Webhooks settings.
-
-
-
-## 🧩 Technologies
-
-* **Framework**: Next.js (App Router)
-* **Auth**: Clerk
-* **Database**: MongoDB + Mongoose
-* **File Storage**: Cloudinary
-* **UI**: Tailwind CSS, Radix UI primitives, Lucide icons
-* **AI & HTTP**: Axios, react-markdown, Sonner toasts
-
----
-
-## 🛠 Development Tips
-
-* **Multiple developers & webhooks**
-  Deploy to Vercel (or any single stable URL). In Clerk Webhooks, point to your Vercel URL so all teammates share the same endpoint.
-* **Database connection**
-  `lib/mongoose.ts` uses a global cache to avoid reconnecting during hot reloads.
-* **Clerk**
-  Make sure your `CLERK_*` vars match your Clerk dashboard settings (Publishable & Secret keys).
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
